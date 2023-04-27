@@ -13,8 +13,8 @@ int init_daemon()
     if (sock < 0)
         return (1);
     server_a.sin_family = AF_INET;
-    server_a.sin_port = 900;
-    server_a.sin_addr.s_addr = inet_addr("127.0.0.1");
+    server_a.sin_port = htons(9001);
+    server_a.sin_addr.s_addr = INADDR_ANY;
     if (bind(sock,(void *)&server_a, sizeof(ADRESS)) < 0)
         return (close(sock), printf("error\n"), 1);
     printf("bind sucsessfull\n");
