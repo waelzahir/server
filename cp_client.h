@@ -6,6 +6,9 @@
 #include <stdio.h>
 #include <strings.h>
 #include <stdlib.h>
+#include <string.h>
+#include <fcntl.h>
+
 typedef struct sockaddr_in ADRESS;
 
 #endif
