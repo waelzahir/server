@@ -48,7 +48,7 @@ int main (int ac, char  **av)
         c_sock = accept(sock, NULL, NULL);
         if (c_sock < 0)
             return perror(""), 1;
-        int size = recv(c_sock, msg, MSGSIZE, 0);
+        size = recv(c_sock, msg, MSGSIZE, 0);
         if (size < 0)
             return (perror("mlsg"), 1);
         mapped = map_file(msg);
@@ -56,5 +56,8 @@ int main (int ac, char  **av)
             return (perror(""), 1);
         send(c_sock, mapped, size, 0);
         munmap(mapped, size);
+
         printf("file sent\n");
+        close(c_sock);
+        close(sock);
 }
