@@ -5,10 +5,6 @@ client:
 
 clean:
 	@rm -rf server client
-	@rm -rf output
 
 test: clean server client
-	@./server
-	@chmod 666 output
-	@cat output
-	@rm -rf output
+	@./server &

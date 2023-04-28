@@ -4,6 +4,8 @@
 #include <unistd.h>
 #include <stdio.h>
 #include <strings.h>
+#include <string.h>
+
 #include <stdlib.h>
        #include <sys/stat.h>
        #include <sys/mman.h>
